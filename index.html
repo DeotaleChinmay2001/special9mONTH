@@ -180,49 +180,49 @@
   var totalClicks = 0;
   var currentIndex = 0;
 
-  function randomizeImage() {
-  let root = document.documentElement;
-  root.style.setProperty('--image', 'url(' + images[currentIndex] + ')');
-  currentIndex++;
-  if (currentIndex >= images.length) {
-    currentIndex = 0;
-  }
-  var puzzleItems = document.querySelectorAll('#puzz i');
-  var puzzleBox = document.getElementById('puz_box');
-  var puzzleBoxRect = puzzleBox.getBoundingClientRect();
-  var puzzleBoxWidth = puzzleBoxRect.width;
-  var puzzleBoxHeight = puzzleBoxRect.height;
-  var puzzleItemWidth = 100;
-  var puzzleItemHeight = 100;
+//   function randomizeImage() {
+//   let root = document.documentElement;
+//   root.style.setProperty('--image', 'url(' + images[currentIndex] + ')');
+//   currentIndex++;
+//   if (currentIndex >= images.length) {
+//     currentIndex = 0;
+//   }
+//   var puzzleItems = document.querySelectorAll('#puzz i');
+//   var puzzleBox = document.getElementById('puz_box');
+//   var puzzleBoxRect = puzzleBox.getBoundingClientRect();
+//   var puzzleBoxWidth = puzzleBoxRect.width;
+//   var puzzleBoxHeight = puzzleBoxRect.height;
+//   var puzzleItemWidth = 100;
+//   var puzzleItemHeight = 100;
 
-  for (var i = 0; i < puzzleItems.length; i++) {
-    var leftLimit = 0;
-    var rightLimit = puzzleBoxWidth - puzzleItemWidth;
-    var topLimit = 0;
-    var bottomLimit = puzzleBoxHeight - puzzleItemHeight;
+//   for (var i = 0; i < puzzleItems.length; i++) {
+//     var leftLimit = 0;
+//     var rightLimit = puzzleBoxWidth - puzzleItemWidth;
+//     var topLimit = 0;
+//     var bottomLimit = puzzleBoxHeight - puzzleItemHeight;
 
-    var randomLeft = Math.floor(Math.random() * (rightLimit - leftLimit + 1)) + leftLimit;
-    var randomTop = Math.floor(Math.random() * (bottomLimit - topLimit + 1)) + topLimit;
+//     var randomLeft = Math.floor(Math.random() * (rightLimit - leftLimit + 1)) + leftLimit;
+//     var randomTop = Math.floor(Math.random() * (bottomLimit - topLimit + 1)) + topLimit;
 
-    puzzleItems[i].style.left = randomLeft + 'px';
-    puzzleItems[i].style.top = randomTop + 'px';
-  }
-}
+//     puzzleItems[i].style.left = randomLeft + 'px';
+//     puzzleItems[i].style.top = randomTop + 'px';
+//   }
+// }
 
   
-  // function randomizeImage() {
-  //   let root = document.documentElement;
-  //   root.style.setProperty('--image', 'url(' + images[currentIndex] + ')');
-  //   currentIndex++;
-  //   if (currentIndex >= images.length) {
-  //     currentIndex = 0;
-  //   }
-  //   var puzzleItems = document.querySelectorAll('#puzz i');
-  //   for (var i = 0; i < puzzleItems.length; i++) {
-  //     puzzleItems[i].style.left = Math.random() * (window.innerWidth - 100) + 'px';
-  //     puzzleItems[i].style.top = Math.random() * (window.innerHeight - 100) + 'px';
-  //   }
-  // }
+  function randomizeImage() {
+    let root = document.documentElement;
+    root.style.setProperty('--image', 'url(' + images[currentIndex] + ')');
+    currentIndex++;
+    if (currentIndex >= images.length) {
+      currentIndex = 0;
+    }
+    var puzzleItems = document.querySelectorAll('#puzz i');
+    for (var i = 0; i < puzzleItems.length; i++) {
+      puzzleItems[i].style.left = Math.random() * (window.innerWidth - 100) + 'px';
+      puzzleItems[i].style.top = Math.random() * (window.innerHeight - 100) + 'px';
+    }
+  }
 
   randomizeImage();
 
